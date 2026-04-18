@@ -17,9 +17,8 @@ A modern mobile job portal application built with **Expo (Prebuild / Dev Client)
 - **Expo Dev Client**
 - **Redux Toolkit + RTK Query**
 - **TypeScript**
-- **AsyncStorage (Caching)**
+- **MMKV Storage (Caching)**
 - **Environment-based configuration**
-- **React Native Google Signin**
 - **Nativewind**
 
 ---
@@ -157,48 +156,25 @@ Build Android:
 npx eas build --platform android
 ```
 
----
+## \
 
 ## ⚙️ Key Features
 
-- 🔍 Job browsing
-- 👤 User authentication
-- 📄 Apply to jobs
+- 🔍 Browse events from all over the world and see their details
+- 📄 Get event location and link to buy ticket
 - ⚡ Optimized API fetching with RTK Query
-- 💾 Persistent auth using Redux Persist
+- 💾 Persist favourite events using MMKV
 
 ---
 
-## 🛠 Troubleshooting
+## 🛠 App Preview
 
-### ❌ Metro bundler issues
-
-```bash
-npx expo start -c
-```
-
-### ❌ Android build issues
-
-```bash
-cd android
-./gradlew clean
-cd ..
-```
-
-### ❌ Dependency mismatch
-
-```bash
-rm -rf node_modules
-npm install
-```
-
----
-
-## 📌 Notes
-
-- This project uses **Expo Dev Client**, not Expo Go
-- Native changes require rebuilding the app
-- Ensure backend API is running and accessible
+![Splash Screen](./assets/screenshots/ss-1.png)
+![Home/Event List Screen](./assets/screenshots/ss-2.png)
+![Home/Event List Screen (Dark Mode)](./assets/screenshots/ss-3.png)
+![Favourites Screen](./assets/screenshots/ss-4.png)
+![Event Searching By City](./assets/screenshots/ss-5.png)
+![Event Details Screen](./assets/screenshots/ss-6.png)
 
 ---
 
@@ -208,4 +184,4 @@ npm install
 
 ---
 
-If you face any issues during setup, feel free to reach out or open an issue 🚀
+Thank you! If you face any issues during setup, feel free to reach out or open an issue 🚀
