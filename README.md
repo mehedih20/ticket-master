@@ -16,8 +16,8 @@ Browse worldwide events, search by city, view details, and save favourites with 
 
 ## 📥 Download & Demo
 
-- 📦 **APK Download:** [LINK]
-- 🎥 **Video Demonstration:** [LINK]
+- 📦 **APK Download:** [LINK](https://drive.google.com/file/d/1GqA_2zOqXgKh4wSBSHSUbO8FFIz-HZ4y/view?usp=sharing)
+- 🎥 **Video Demonstration:** [LINK](https://drive.google.com/file/d/1xGjqF6V272do2ZeYZZw8Tv9uGCHTaquo/view?usp=sharing)
 
 ---
 
@@ -75,7 +75,7 @@ Browse worldwide events, search by city, view details, and save favourites with 
 
 <td align="center">
 <img src="./assets/screenshots/ss-5.png" width="180"/><br/>
-<sub><b>Search by City</b></sub>
+<sub><b>Search by City/Text</b></sub>
 </td>
 
 <td align="center">
@@ -92,8 +92,8 @@ Browse worldwide events, search by city, view details, and save favourites with 
 ## 1️⃣ Clone Repository
 
 ````bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone https://github.com/mehedih20/ticket-master.git
+cd ticket-master
 
 ## 2️⃣ Install Dependencies
 
