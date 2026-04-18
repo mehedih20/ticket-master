@@ -1,100 +1,131 @@
-# Ticket Master (Expo + React Native)
+````md
+<div align="center">
 
-A modern mobile job portal application built with **Expo (Prebuild / Dev Client)**. This app allows users to browse jobs, apply, and manage their profiles with a smooth and scalable architecture.
+# 🎟️ Ticket Master
+
+A modern mobile event discovery application built with **Expo + React Native**.  
+Browse worldwide events, search by city, view details, and save favourites with a fast and smooth experience.
+
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+![Expo](https://img.shields.io/badge/Expo-Prebuild-black)
+![React Native](https://img.shields.io/badge/React%20Native-Mobile-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
+
+</div>
 
 ---
 
 ## 📥 Download & Demo
 
-- 📦 **APK Download:** [LINK]
-- 🎥 **Video Demonstartion:** [LINK]
+- 📦 **APK Download:** [LINK](https://drive.google.com/file/d/1GqA_2zOqXgKh4wSBSHSUbO8FFIz-HZ4y/view?usp=sharing)
+- 🎥 **Video Demonstration:** [LINK](https://drive.google.com/file/d/1xGjqF6V272do2ZeYZZw8Tv9uGCHTaquo/view?usp=sharing)
 
 ---
 
-## 🚀 Tech Stack
+## ✨ Features
 
-- **React Native (Expo Prebuild)**
+- 🌍 Browse live events from around the world
+- 🔍 Search events by city
+- 📄 View full event details
+- 🎟️ Direct ticket purchase links
+- ❤️ Save favourite events
+- ⚡ Fast API caching with RTK Query
+- 🌙 Dark mode support
+- 📱 Smooth mobile-first UI
+
+---
+
+## 🛠 Tech Stack
+
+- **React Native**
+- **Expo Prebuild**
 - **Expo Dev Client**
-- **Redux Toolkit + RTK Query**
 - **TypeScript**
-- **MMKV Storage (Caching)**
-- **Environment-based configuration**
+- **Redux Toolkit**
+- **RTK Query**
+- **MMKV Storage**
 - **Nativewind**
 
 ---
 
-## 📁 Project Setup Guide
+## 📱 App Preview
 
-Follow these steps to get the project running locally.
+<table>
+<tr>
+<td align="center">
+<img src="./assets/screenshots/ss-1.png" width="180"/><br/>
+<sub><b>Splash Screen</b></sub>
+</td>
+
+<td align="center">
+<img src="./assets/screenshots/ss-2.png" width="180"/><br/>
+<sub><b>Home Screen</b></sub>
+</td>
+
+<td align="center">
+<img src="./assets/screenshots/ss-3.png" width="180"/><br/>
+<sub><b>Dark Mode</b></sub>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img src="./assets/screenshots/ss-4.png" width="180"/><br/>
+<sub><b>Favourites</b></sub>
+</td>
+
+<td align="center">
+<img src="./assets/screenshots/ss-5.png" width="180"/><br/>
+<sub><b>Search by City</b></sub>
+</td>
+
+<td align="center">
+<img src="./assets/screenshots/ss-6.png" width="180"/><br/>
+<sub><b>Event Details</b></sub>
+</td>
+</tr>
+</table>
 
 ---
 
-## 1️⃣ Clone the Repository
+## 🚀 Getting Started
+
+## 1️⃣ Clone Repository
 
 ```bash
 git clone <your-repo-url>
-cd <your-project-folder>
+cd <project-folder>
 ```
-
----
+````
 
 ## 2️⃣ Install Dependencies
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
----
+## 3️⃣ Setup Environment Variables
 
-## 3️⃣ Environment Variables Setup
-
-Create a `.env.local` file in the root of your project:
+Create `.env.local`
 
 ```env
 EXPO_PUBLIC_BASE_API=https://your-api-url.com
-EXPO_PUBLIC_API_KEY=your-image-api-key
+EXPO_PUBLIC_API_KEY=your-api-key
 ```
 
-### ⚠️ Important Notes:
-
-- Always prefix Expo environment variables with `EXPO_PUBLIC_`
-- Never commit `.env.local` to version control
-- Ensure values match your backend configuration
-
----
-
-## 4️⃣ Prebuild the Project
-
-Since this project uses **Expo Prebuild**, you must generate native code:
+## 4️⃣ Generate Native Folders
 
 ```bash
 npx expo prebuild
 ```
 
-### This will:
-
-- Generate `android/` and `ios/` folders
-- Apply config plugins
-- Sync native dependencies
-
----
-
-## 5️⃣ Run on Android
-
-Make sure you have:
-
-- Android Studio installed
-- Emulator running OR physical device connected
+## 5️⃣ Run Android
 
 ```bash
 npx expo run:android
 ```
 
----
-
-## 6️⃣ Run on iOS (Mac Only)
+## 6️⃣ Run iOS (Mac)
 
 ```bash
 npx expo run:ios
@@ -102,79 +133,29 @@ npx expo run:ios
 
 ---
 
-## 🔄 Common Workflow
-
-Whenever you:
-
-- Install a new native dependency
-- Change `app.json` / `app.config.js`
-- Modify config plugins
-
-👉 Run:
+## 📦 Build APK / AAB
 
 ```bash
-npx expo prebuild
+npx expo login
+npx eas build:configure
+npx eas build --platform android
 ```
 
 ---
 
-## 🧪 Clearing Cache (Recommended if issues occur)
+## 🔄 Common Commands
+
+### Clear Cache
 
 ```bash
 npx expo start -c
 ```
 
----
-
-## 🔐 Environment Switching (Optional)
-
-If using multiple environments:
+### Rebuild Native Code
 
 ```bash
-.env.local
-.env.development
-.env.production
+npx expo prebuild
 ```
-
-## 📦 Build APK / AAB (EAS)
-
-Login to Expo:
-
-```bash
-npx expo login
-```
-
-Configure EAS:
-
-```bash
-npx eas build:configure
-```
-
-Build Android:
-
-```bash
-npx eas build --platform android
-```
-
-## \
-
-## ⚙️ Key Features
-
-- 🔍 Browse events from all over the world and see their details
-- 📄 Get event location and link to buy ticket
-- ⚡ Optimized API fetching with RTK Query
-- 💾 Persist favourite events using MMKV
-
----
-
-## 🛠 App Preview
-
-![Splash Screen](./assets/screenshots/ss-1.png)
-![Home/Event List Screen](./assets/screenshots/ss-2.png)
-![Home/Event List Screen (Dark Mode)](./assets/screenshots/ss-3.png)
-![Favourites Screen](./assets/screenshots/ss-4.png)
-![Event Searching By City](./assets/screenshots/ss-5.png)
-![Event Details Screen](./assets/screenshots/ss-6.png)
 
 ---
 
@@ -184,4 +165,9 @@ npx eas build --platform android
 
 ---
 
-Thank you! If you face any issues during setup, feel free to reach out or open an issue 🚀
+<div align="center">
+
+Made with ❤️ using React Native + Expo
+
+</div>
+```
