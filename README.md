@@ -1,4 +1,3 @@
-````md
 <div align="center">
 
 # 🎟️ Ticket Master
@@ -17,8 +16,8 @@ Browse worldwide events, search by city, view details, and save favourites with 
 
 ## 📥 Download & Demo
 
-- 📦 **APK Download:** [LINK](https://drive.google.com/file/d/1GqA_2zOqXgKh4wSBSHSUbO8FFIz-HZ4y/view?usp=sharing)
-- 🎥 **Video Demonstration:** [LINK](https://drive.google.com/file/d/1xGjqF6V272do2ZeYZZw8Tv9uGCHTaquo/view?usp=sharing)
+- 📦 **APK Download:** [LINK]
+- 🎥 **Video Demonstration:** [LINK]
 
 ---
 
@@ -92,17 +91,15 @@ Browse worldwide events, search by city, view details, and save favourites with 
 
 ## 1️⃣ Clone Repository
 
-```bash
+````bash
 git clone <your-repo-url>
 cd <project-folder>
-```
-````
 
 ## 2️⃣ Install Dependencies
 
 ```bash
 npm install
-```
+````
 
 ## 3️⃣ Setup Environment Variables
 
