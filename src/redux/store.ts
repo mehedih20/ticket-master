@@ -1,25 +1,31 @@
 import { baseApi } from "./api/baseApi";
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "./features/theme/themeSlice";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import favoritesReducer from "./features/favorites/favoritesSlice";
 import { persistReducer, persistStore } from "redux-persist";
-
-const authConfig = {
-  key: "auth",
-  storage: AsyncStorage,
-};
+import { mmkvStorage } from "../utils/mmkvStorage";
 
 const themeConfig = {
   key: "theme",
-  storage: AsyncStorage,
+  storage: mmkvStorage,
+};
+
+const favoritesConfig = {
+  key: "favorites",
+  storage: mmkvStorage,
 };
 
 const persistedThemeReducer = persistReducer(themeConfig, themeReducer);
+const persistedFavoritesReducer = persistReducer(
+  favoritesConfig,
+  favoritesReducer,
+);
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
     theme: persistedThemeReducer,
+    favorites: persistedFavoritesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

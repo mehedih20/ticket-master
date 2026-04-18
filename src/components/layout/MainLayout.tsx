@@ -10,7 +10,6 @@ import * as Updates from "expo-updates";
 
 const MainLayout = () => {
   const theme = useAppSelector((state) => state.theme.theme);
-
   const [showSplashScreen, setShowSplashScreen] = useState(true);
   const [isUpdating, setIsUpdating] = useState(false);
 

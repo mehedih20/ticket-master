@@ -19,12 +19,11 @@ const SplashScreen = () => {
     <SafeAreaView className="flex-1 bg-white dark:bg-gray-800">
       <View className="flex-1 justify-center items-center">
         <Animated.Image
-          source={require("../../../assets/logo.webp")}
-          tintColor={colorScheme === "dark" ? "white" : undefined}
+          source={require("../../../assets/logo.png")}
           alt="App Logo"
           style={{
-            width: 180,
-            height: 180,
+            width: 320,
+            height: 250,
             resizeMode: "contain",
             borderRadius: 24,
             transform: [{ scale: scaleAnim }],

@@ -1,4 +1,4 @@
-# BHC Jobs (Expo + React Native)
+# Ticket Master (Expo + React Native)
 
 A modern mobile job portal application built with **Expo (Prebuild / Dev Client)**. This app allows users to browse jobs, apply, and manage their profiles with a smooth and scalable architecture.
 
@@ -6,8 +6,8 @@ A modern mobile job portal application built with **Expo (Prebuild / Dev Client)
 
 ## 📥 Download & Demo
 
-- 📦 **APK Download:** [LINK](https://drive.google.com/file/d/1_t73-Q03Tpq63RcSHlm2P57RfXb08F6p/view?usp=sharing)
-- 🎥 **Video Demonstartion:** [LINK](https://drive.google.com/file/d/1sRyQNK_BrnpPhMDGv4qQkX1bLT0s7COl/view?usp=sharing)
+- 📦 **APK Download:** [LINK]
+- 🎥 **Video Demonstartion:** [LINK]
 
 ---
 
@@ -55,8 +55,7 @@ Create a `.env.local` file in the root of your project:
 
 ```env
 EXPO_PUBLIC_BASE_API=https://your-api-url.com
-EXPO_PUBLIC_IMAGE_API=your-image-api-url
-EXPO_PUBLIC_GOOGLE_CLIENT_ID=your-google-web-client-id
+EXPO_PUBLIC_API_KEY=your-image-api-key
 ```
 
 ### ⚠️ Important Notes:

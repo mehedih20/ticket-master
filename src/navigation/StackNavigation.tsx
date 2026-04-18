@@ -1,5 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import EventDetailScreen from "../screens/EventDetailScreen";
 import BottomNavigation from "./BottomNavigation";
 import { useColorScheme } from "nativewind";
 
@@ -28,6 +29,13 @@ const StackNavigation = () => {
         options={{
           headerShown: false,
           title: "Dashboard",
+        }}
+      />
+      <Stack.Screen
+        name="EventDetail"
+        component={EventDetailScreen}
+        options={{
+          title: "Event Details",
         }}
       />
     </Stack.Navigator>
