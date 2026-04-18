@@ -91,15 +91,16 @@ Browse worldwide events, search by city, view details, and save favourites with 
 
 ## 1️⃣ Clone Repository
 
-````bash
+```bash
 git clone https://github.com/mehedih20/ticket-master.git
 cd ticket-master
+```
 
 ## 2️⃣ Install Dependencies
 
 ```bash
 npm install
-````
+```
 
 ## 3️⃣ Setup Environment Variables
 
