@@ -7,7 +7,7 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/4cb3409a-8117-4a5f-847d-1e00f803dd32",
+      "url": "https://u.expo.dev/a6ef5c43-3b60-4658-a043-60e468d87b42",
       "fallbackToCacheTimeout": 0
     },
     "orientation": "portrait",
@@ -37,7 +37,9 @@
       "bundler": "metro"
     },
     "extra": {
-      "eas": {}
+      "eas": {
+        "projectId": "a6ef5c43-3b60-4658-a043-60e468d87b42"
+      }
     },
     "plugins": []
   }
