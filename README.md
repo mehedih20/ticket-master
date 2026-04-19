@@ -47,6 +47,46 @@ Browse worldwide events, search by city, view details, and save favourites with 
 
 ---
 
+## 📁 Project Structure
+
+````bash
+src/
+ ├── redux/            # Redux toolkit with rtq query
+ ├── components/       # Reusable UI components and layouts
+ ├── constants/        # App constants
+ ├── navigation/       # Stack + Tabs
+ ├── screens/          # App screens
+ ├── types/            # TypeScript types
+ └── utils/            # Helpers
+
+---
+
+## 🧠 Architecture & Technical Decisions
+
+### State Management
+Used **Redux Toolkit + RTK Query** for scalable state management, API caching, request deduplication, loading states, and pagination.
+
+### Navigation
+Used **React Navigation** with Stack + Bottom Tabs for clean separation between Home, Favorites, and Details screens.
+
+### Local Storage
+Used **MMKV** for persistent favorites because it is significantly faster than AsyncStorage and ideal for lightweight offline storage.
+
+### UI Styling
+Used **NativeWind** for utility-first styling, enabling faster UI development and reusable design patterns.
+
+### Maps Integration
+Used **OpenStreetMap (Leaflet via WebView)** instead of Google Maps due to API billing/key requirements during development.
+The map module is isolated and can be easily replaced with `react-native-maps` later.
+
+### Performance
+Used **FlatList** with pagination and memoized components to keep scrolling smooth with large event lists.
+
+### Error Handling
+Implemented loading states, empty results state, and network failure feedback for better user experience.
+
+---
+
 ## 📱 App Preview
 
 <table>
@@ -94,7 +134,7 @@ Browse worldwide events, search by city, view details, and save favourites with 
 ```bash
 git clone https://github.com/mehedih20/ticket-master.git
 cd ticket-master
-```
+````
 
 ## 2️⃣ Install Dependencies
 
@@ -107,7 +147,7 @@ npm install
 Create `.env.local`
 
 ```env
-EXPO_PUBLIC_BASE_API=https://your-api-url.com
+EXPO_PUBLIC_BASE_API=https://app.ticketmaster.com/discovery/v2
 EXPO_PUBLIC_API_KEY=your-api-key
 ```
 

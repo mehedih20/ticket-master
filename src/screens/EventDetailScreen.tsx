@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   View,
   Text,
@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { WebView } from "react-native-webview";
+import NetInfo from "@react-native-community/netinfo";
 import { TicketmasterEvent } from "../types/eventListType";
 import { getLeafletHtml } from "../constants/getLeafletHtml";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
@@ -21,6 +22,7 @@ import { useGetEventDetailsQuery } from "../redux/features/events/eventsApi";
 const { width } = Dimensions.get("window");
 
 const EventDetailScreen = ({ navigation, route }: any) => {
+  const [isOffline, setIsOffline] = useState(false);
   const { event: initialEvent } = route.params as {
     event: TicketmasterEvent;
   };
@@ -53,6 +55,18 @@ const EventDetailScreen = ({ navigation, route }: any) => {
     ? parseFloat(venue.location.longitude)
     : null;
 
+  const openTicket = async () => {
+    if (!event?.url) return;
+    await Linking.openURL(event.url);
+  };
+
+  const openMaps = async () => {
+    if (!latitude || !longitude) return;
+
+    const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+    await Linking.openURL(url);
+  };
+
   useEffect(() => {
     navigation.setOptions({
       title: initialEvent?.name || "Event Details",
@@ -71,17 +85,16 @@ const EventDetailScreen = ({ navigation, route }: any) => {
     });
   }, [navigation, isFavorite, initialEvent]);
 
-  const openTicket = async () => {
-    if (!event?.url) return;
-    await Linking.openURL(event.url);
-  };
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener((state) => {
+      const offline =
+        state.isConnected === false || state.isInternetReachable === false;
 
-  const openMaps = async () => {
-    if (!latitude || !longitude) return;
+      setIsOffline(offline);
+    });
 
-    const url = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
-    await Linking.openURL(url);
-  };
+    return () => unsubscribe();
+  }, []);
 
   if (isLoading && !data) {
     return (
@@ -94,6 +107,14 @@ const EventDetailScreen = ({ navigation, route }: any) => {
   return (
     <View className="flex-1 bg-white dark:bg-gray-900">
       <ScrollView showsVerticalScrollIndicator={false}>
+        {isOffline && (
+          <View className="bg-red-500 px-4 py-2">
+            <Text className="text-white text-center font-semibold">
+              No Internet Connection
+            </Text>
+          </View>
+        )}
+
         {/* Cover */}
         <Image
           source={{ uri: imageUrl }}

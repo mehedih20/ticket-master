@@ -108,4 +108,4 @@ const EventCard = ({ event }: TProps) => {
   );
 };
 
-export default EventCard;
+export default React.memo(EventCard);

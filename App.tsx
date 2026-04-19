@@ -6,6 +6,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import MainLayout from "./src/components/layout/MainLayout";
+import { Toaster } from "sonner-native";
+
 export default function App() {
   return (
     <SafeAreaProvider>
@@ -13,6 +15,17 @@ export default function App() {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <MainLayout />
+            <Toaster
+              position="top-center"
+              style={{ backgroundColor: "white" }}
+              swipeToDismissDirection="up"
+              closeButton={true}
+              toastOptions={{
+                titleStyle: {
+                  color: "black",
+                },
+              }}
+            />
           </PersistGate>
         </Provider>
       </GestureHandlerRootView>
